@@ -141,12 +141,22 @@
 #define TARGET_VOLTAGE_DIVIDER 100
 #define MILLIVOLT_PER_AMP 100
 #define USE_SERIAL_TELEMETRY
-
 #endif
 
 #ifdef  REF_L431
 #define FILE_NAME				"REF_L431"
 #define FIRMWARE_NAME           "L431 TEST"
+#define DEAD_TIME               80
+#define HARDWARE_GROUP_L4_A
+#define TARGET_VOLTAGE_DIVIDER  260
+#define USE_SERIAL_TELEMETRY
+#define RAMP_SPEED_LOW_RPM 1
+#define RAMP_SPEED_HIGH_RPM 1
+#endif
+
+#ifdef  REF_L431_CAN
+#define FILE_NAME				"REF_L431_CAN"
+#define FIRMWARE_NAME           "L431 CAN"
 #define DEAD_TIME               80
 #define HARDWARE_GROUP_L4_A
 #define TARGET_VOLTAGE_DIVIDER  260
