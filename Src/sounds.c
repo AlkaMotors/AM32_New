@@ -62,7 +62,7 @@ void playBlueJayTune()
     uint16_t frequency;
     comStep(3);
     // read_flash_bin(blueJayTuneBuffer , eeprom_address + 48 , 128);
-    for (int i = 0; i < 124; i += 2) {
+    for (int i = 4; i < 128; i += 2) {
         RELOAD_WATCHDOG_COUNTER();
         signaltimeout = 0;
 
@@ -93,8 +93,7 @@ void playStartupTune()
 {
     __disable_irq();
 
-    uint8_t value = *(uint8_t*)(eeprom_address + 48);
-    if (value != 0xFF) {
+    if (eepromBuffer.tune[0] != 0xFF) {
         playBlueJayTune();
     } else {
         SET_AUTO_RELOAD_PWM(TIM1_AUTORELOAD);
