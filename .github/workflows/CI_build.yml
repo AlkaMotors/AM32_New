@@ -21,5 +21,5 @@ jobs:
         with:
           name: AM32-binaries
           path: |
-            obj/*.hex
+            obj/*.bin
           retention-days: 7
