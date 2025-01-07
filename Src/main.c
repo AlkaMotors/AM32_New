@@ -214,6 +214,9 @@ an settings option)
 *2.16    - add L431 
 				 - add variable auto timing
 				 - add droneCAN
+*2.17    - Setup per mcu comparator power levels 
+				 - add dshot programming
+				                  
 */
 #include "main.h"
 #include "ADC.h"
