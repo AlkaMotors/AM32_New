@@ -76,11 +76,11 @@ void telem_UART_Init(void)
     LL_DMA_EnableIT_TE(DMA1, LL_DMA_CHANNEL_4);
 }
 
-void send_telem_DMA()
+void send_telem_DMA(uint8_t bytes)
 { // set data length and enable channel to start transfer
     LL_USART_SetTransferDirection(USART2, LL_USART_DIRECTION_TX);
     //  GPIOB->OTYPER &= 0 << 6;
-    LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_4, nbDataToTransmit);
+    LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_4, bytes);
     LL_USART_EnableDMAReq_TX(USART2);
 
     LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_4);
